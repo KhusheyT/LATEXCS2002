@@ -25,18 +25,18 @@ QUESTION 26, GATE 2002-CS
 ---
 ## Build and Run
 ```bash
-$ git clone https://github.com/gaurav5-5/ard-workshop.git
+https://github.com/KhusheyT/LATEXCS2002.git
 ```
 
 ### Using [PlatformIO IDE](https://platformio.org/platformio-ide)
 1. Download IDE from https://platformio.org/platformio-ide
-2. Open the [ide/codes](ide/codes) folder
+2. Open the codes.ino folder
 3. Connect Arduino
 4. Build and Run
 
 ### Using Terminal with [PlatformIO Core](https://github.com/platformio/platformio-core)
 1. Install PlatformIO Core CLI by following instructions from [here](https://platformio.org/install/cli)
-2. Navigate to [/ide/codes](ide/codes)
+2. Navigate to codes.ino
 3. Connect Arduino
 4. Run:
 ```bash
