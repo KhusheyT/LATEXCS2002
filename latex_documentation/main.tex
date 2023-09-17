@@ -1,0 +1,265 @@
+\documentclass[a4paper,11pt]{article}
+
+% Set page size and margins
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%Karnaugh Maps
+\usepackage{karnaugh-map}
+
+% TOC
+\usepackage{titlesec}
+
+% Lists
+\usepackage{enumitem}
+
+% Tables
+\usepackage{tabularx}
+
+% Code rendering
+\usepackage{listings}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,linkcolor={black},citecolor={blue!80!black},urlcolor={blue!80!black}]{hyperref}
+
+% Custom shorthands
+%% Table cmds
+\newcommand\HSPC{\rule{0pt}{4ex}\rule[-2.0ex]{0pt}{0pt}}
+\newcommand\RSPC{\rule{0pt}{2.5ex}\rule[-1.25ex]{0pt}{0pt}}
+
+%% Math cmds
+\newcommand{\mathfsc}[2]{#1#2\normalsize}
+
+% Code bloc styling
+\lstdefinestyle{myStyle}{
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numbersep=10pt,
+    numberstyle=\normalsize\color{gray!80!black},
+    basicstyle=\large\ttfamily,
+    keywordstyle=\bfseries\color[HTML]{FE4A49},
+    commentstyle=\itshape\color[HTML]{A6A6A8},
+    identifierstyle=\color[HTML]{2AB7CA},
+    backgroundcolor=\color[HTML]{F4F4F8},
+    stringstyle=\color[HTML]{FED766}
+}
+
+
+\title{\textbf{TASK 8: GATE QUESTION SOLUTION }}
+\author{KHUSHI THAKUR}
+
+\begin{document}
+\date{}
+\maketitle
+
+% Make Table of contents from Sections
+\tableofcontents
+
+% Problem Statement
+\newpage
+\section{Problem}
+\label{sec:ques}
+\textbf{(GATE CS Q26- YEAR 2002)}\\
+\textbf{Q.26} Consider the following logic circuit where inputs are functions f1,f2,f3 and output is ?:
+      \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, baseline=(XXXX.south) ]
+\path (0,197);\path (434.4000244140625,0);\draw    ($(current bounding box.center)+(0,0.3em)$) node [anchor=south] (XXXX) {};
+%Shape: Nand Gate [id:dp2890993872019729] 
+\draw   (89.04,43.6) -- (104.71,43.6) .. controls (113.36,43.6) and (120.38,52.34) .. (120.38,63.1) .. controls (120.38,73.86) and (113.36,82.6) .. (104.71,82.6) -- (89.04,82.6) -- (89.04,43.6) -- cycle (78.6,50.1) -- (89.04,50.1) (78.6,76.1) -- (89.04,76.1) (126.64,63.1) -- (135,63.1) (120.38,63.1) .. controls (120.38,60.95) and (121.78,59.2) .. (123.51,59.2) .. controls (125.24,59.2) and (126.64,60.95) .. (126.64,63.1) .. controls (126.64,65.25) and (125.24,67) .. (123.51,67) .. controls (121.78,67) and (120.38,65.25) .. (120.38,63.1) -- cycle ;
+%Shape: Not/Inverter Gate [id:dp19946932703366493] 
+\draw   (167.81,77) -- (212.26,107) -- (167.81,137) -- (167.81,77) -- cycle (153,107) -- (167.81,107) (221.15,107) -- (233,107) (212.26,107) .. controls (212.26,103.69) and (214.25,101) .. (216.7,101) .. controls (219.16,101) and (221.15,103.69) .. (221.15,107) .. controls (221.15,110.31) and (219.16,113) .. (216.7,113) .. controls (214.25,113) and (212.26,110.31) .. (212.26,107) -- cycle ;
+%Shape: Nand Gate [id:dp5606961917286739] 
+\draw   (330.86,56.77) -- (353.09,56.77) .. controls (365.35,56.77) and (375.31,70.22) .. (375.31,86.77) .. controls (375.31,103.33) and (365.35,116.77) .. (353.09,116.77) -- (330.86,116.77) -- (330.86,56.77) -- cycle (316.05,66.77) -- (330.86,66.77) (316.05,106.77) -- (330.86,106.77) (384.2,86.77) -- (396.05,86.77) (375.31,86.77) .. controls (375.31,83.46) and (377.3,80.77) .. (379.75,80.77) .. controls (382.21,80.77) and (384.2,83.46) .. (384.2,86.77) .. controls (384.2,90.09) and (382.21,92.77) .. (379.75,92.77) .. controls (377.3,92.77) and (375.31,90.09) .. (375.31,86.77) -- cycle ;
+%Straight Lines [id:da09054539939918449] 
+\draw    (135,63.1) -- (316.05,66.77) ;
+%Straight Lines [id:da8208682343487839] 
+\draw    (233,107) -- (316.05,106.77) ;
+% Text Node
+\draw (88,94.7) node [anchor=north west][inner sep=0.75pt]    {$f3( x\ y\ z)$};
+% Text Node
+\draw (12,39.7) node [anchor=north west][inner sep=0.75pt]    {$f1( x\ y\ z)$};
+% Text Node
+\draw (11,64.7) node [anchor=north west][inner sep=0.75pt]    {$f2( x\ y\ z)$};
+\end{tikzpicture}
+\bigskip
+
+\section{Introduction}
+\paragraph{}
+For a given set of Boolean Logic Inputs, we can define the following terms:
+\begin{itemize}
+    \item \textbf{Minterm} is a boolean expression resulting in an output of 1 for the minimum number of cells in a Karnaugh-Map (K-Map) and 0 in other cells.
+    \item \textbf{Sum of Products} is a boolean expression for the \textit{Sum} (OR) of various \textit{Product} (AND) terms.
+    \item \textbf{'do not care'} terms for a boolean expression are the set of input values for which the output of the function does not matter. The value for these can be taken as 0 or 1 by choice
+\end{itemize}
+\bigskip
+
+% Components used
+\section{Components}
+\begin{table}[ht]
+\centering
+\begin{tabularx}{0.8\textwidth} {
+    | >{\raggedright\arraybackslash}X
+    | >{\centering\arraybackslash}X
+    | >{\centering\arraybackslash}X 
+    |
+}
+    \hline
+    \centering\textbf{\large Component} & \textbf{\large Value} & \textbf{\large Quantity} \HSPC \\
+    \hline
+    Arduino & UNO & 1 \RSPC \\
+    \hline
+    Breadboard & - & 1 \RSPC \\
+    \hline
+    LED & - & 1 \RSPC \\
+    \hline
+    Jumper Wires & M-M & 10 \RSPC \\
+    \hline
+    Resistor & 220 $\Omega$ & 1 \RSPC \\
+    \hline
+\end{tabularx}
+\caption{Table of Components}
+\label{table:1}
+\end{table}
+\bigskip
+
+\newpage
+\section{Solution}
+\subsection{Karnaugh Map}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, baseline=(XXXX.south) ]
+\path (0,389);\path (606.8000183105469,0);\draw    ($(current bounding box.center)+(0,0.3em)$) node [anchor=south] (XXXX) {};
+%Shape: Grid [id:dp9703746717393453] 
+\draw  [draw opacity=0] (143.39,70.85) -- (331.6,69.93) -- (332.3,163.15) -- (144.09,164.07) -- cycle ; \draw   (143.39,70.85) -- (144.09,164.07)(189.88,70.63) -- (190.58,163.84)(236.37,70.4) -- (237.07,163.61)(282.86,70.17) -- (283.56,163.39)(329.35,69.95) -- (330.05,163.16) ; \draw   (143.39,70.85) -- (331.6,69.93)(143.74,117.34) -- (331.95,116.42)(144.09,163.83) -- (332.3,162.91) ; \draw    ;
+%Straight Lines [id:da3246491340892026] 
+\draw    (143.39,70.85) -- (99.02,32.6) ;
+% Text Node
+\draw (154.66,84.25) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+% Text Node
+\draw (201.15,122.32) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+% Text Node
+\draw (201.15,84.01) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+% Text Node
+\draw (154.95,122.32) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+% Text Node
+\draw (247.64,83.78) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+% Text Node
+\draw (247.93,121.85) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+% Text Node
+\draw (294.13,83.55) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+% Text Node
+\draw (294.42,121.62) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+% Text Node
+\draw (155.6,49.51) node [anchor=north west][inner sep=0.75pt]   [align=left] {00};
+% Text Node
+\draw (204.41,49.51) node [anchor=north west][inner sep=0.75pt]   [align=left] {01};
+% Text Node
+\draw (247.92,49.51) node [anchor=north west][inner sep=0.75pt]   [align=left] {11};
+% Text Node
+\draw (292.75,51.42) node [anchor=north west][inner sep=0.75pt]   [align=left] {10};
+% Text Node
+\draw (115.43,83.78) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+% Text Node
+\draw (120.08,119.95) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+% Text Node
+\draw (121.08,33.06) node [anchor=north west][inner sep=0.75pt]   [align=left] {AB};
+% Text Node
+\draw (99.56,52.32) node [anchor=north west][inner sep=0.75pt]   [align=left] {C};
+% Text Node
+\draw (65,179) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\large The final expression is of output is Y = \ F(x,y,!z)}};
+% Text Node
+\draw (68,234) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\large Logic for the code will be Y = X\&\&Y\&\&!Z}};
+\end{tikzpicture}
+
+% Truth Table obtained from K-Map simplification
+\subsection{Truth Table}
+\label{sec:ttf}
+\begin{table}[!h]
+        \centering
+        
+\begin{tabular}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|}
+\hline 
+ X & Y & Z & F(OUTPUT)\\
+\hline 
+ 0 & 0 & 0 & 0 \\
+\hline 
+ 0 & 0 & 1 & 0 \\
+\hline 
+ 0 & 1 & 0 & 0 \\
+\hline 
+ 0 & 1 & 1 & 0 \\
+\hline 
+ 1 & 0 & 0 & 0 \\
+\hline 
+ 1 & 0 & 1 & 0 \\
+\hline 
+ 1 & 1 & 0 & 1 \\
+\hline 
+ 1 & 1 & 1 & 0 \\
+ \hline
+\end{tabular}
+        
+        \end{table}
+
+% Connections
+\newpage
+\section{Connections}
+    \subsection{LED to Arduino}
+        LED connections to Arduino are as follows:
+        \begin{table}[ht]
+            \centering
+            \begin{tabular}{|c |c |c |c |}
+            \hline
+                \textbf{Arduino} & D2 & GND \HSPC \\
+            \hline
+                \textbf{LED} & + & - \HSPC \\ 
+            \hline
+            \end{tabular}
+            \caption{LED Connections}
+            \label{tab:cnct_led}
+        \end{table}
+        
+    \subsection{Input Pins to Arduino} {
+        Input Pin Connections to Arduino are as follows:
+        \begin{table}[ht]
+            \centering
+            \begin{tabular}{|c |c |c |c |c |}
+            \hline
+                \textbf{Arduino} & D6 & D7 & D8&D2 \HSPC \\
+            \hline
+                \textbf{Term} & X & Y & Z &F\HSPC \\
+            \hline
+            \end{tabular}
+            \caption{Input Pin Connections}
+            \label{tab:cnct_ip}
+        \end{table}
+    }
+    
+\subsection{Setting Input Pin Values}
+        The values of the Input pins are taken by connecting them to either $5V$ or GND according to \hyperref[sec:ttf]{Truth Table}
+\bigskip    
+
+
+
+
+% Link to Github repository
+\subsection{Repository}
+Code is online at the following repository:
+\begin{center}
+    \setlength{\fboxsep}{1em}
+    \fbox{
+        \parbox{0.9\textwidth}{
+            \centering
+            \small
+            {}
+            }
+                \url{https://github.com/KhusheyT/blob/main/codes/codes.ino}
+            }
+        
+    
+\end{center}
+
+\end{document}
