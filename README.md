@@ -11,8 +11,7 @@ QUESTION 26, GATE 2002-CS
 ## Dependencies
 - PlatformIO
     - Core[CLI]
-- LaTeX
-    - karnaugh-map
+- LATEX
     - enumitems
     - listings
     - amsmath
@@ -31,8 +30,12 @@ https://github.com/KhusheyT/LATEXCS2002.git
 ### Using [PlatformIO IDE](https://platformio.org/platformio-ide)
 1. Download IDE from https://platformio.org/platformio-ide
 2. Open the codes.ino folder
-3. Connect Arduino
-4. Build and Run
+### Build and Compile
+1. Create a Folder and put platformio.ini file in that folder.
+2. Now create a folder name (src) in the same folder in which you pasted the platformio.ini file and then put code.ino file inside the src folder.
+3. Enter the directory of the folder where you have created platformio.ini and src using commmand cd..in the terminal.
+4. Enter the command (pio run).
+5. connect arduino and then upload the code using command (pio run -t upload).
 
 ### Using Terminal with [PlatformIO Core](https://github.com/platformio/platformio-core)
 1. Install PlatformIO Core CLI by following instructions from [here](https://platformio.org/install/cli)
