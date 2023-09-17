@@ -2,9 +2,9 @@
 GATEQ-2002-26
 # Digital Design with Arduino
 -----------------------------
-Code and Documentation of final GATE Question Implementation for Digita Design with Arduino Workshop
-- [Documentation](/ide/docs/main.pdf)
-- [Source Code](/ide/codes/src/main.cpp)
+Code and Documentation of final GATE Question Implementation for Digital Design with Arduino Workshop
+- [Documentation](main.pdf)
+  
 ---
 ## Dependencies
 - PlatformIO
