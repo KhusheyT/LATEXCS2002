@@ -24,7 +24,7 @@ QUESTION 26, GATE 2002-CS
 ---
 ## Build and Run
 ```bash
-https://github.com/KhusheyT/LATEXCS2002.git
+$gitclone https://github.com/KhusheyT/LATEXCS2002.git
 ```
 
 ### Using [PlatformIO IDE](https://platformio.org/platformio-ide)
