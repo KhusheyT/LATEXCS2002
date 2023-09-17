@@ -1,10 +1,11 @@
 # LATEXCS2002
 GATEQ-2002-26
-# Digital Design with Arduino
+# Digital Design through Arduino
 -----------------------------
 Code and Documentation of final GATE Question Implementation for Digital Design with Arduino Workshop
+QUESTION 26, GATE 2002-CS
 - https://github.com/KhusheyT/LATEXCS2002/blob/main/latex_documentation/main.pdf
-- 
+- https://github.com/KhusheyT/LATEXCS2002/blob/main/codes/code.ino
   
 ---
 ## Dependencies
